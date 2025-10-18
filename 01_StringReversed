@@ -1,0 +1,19 @@
+//String (Easy): Reverse a string → Handle empty and single-character strings
+import java.util.Scanner;
+class Main{
+    public static void main(String []args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the String whatever you want:");
+        String str = sc.nextLine();
+        
+        if(str.isEmpty()){
+            System.out.println("Empty String.");
+            return;
+        }
+        String reversed = "";
+        for(int i=str.length()-1;i>=0;i--){
+            reversed+=str.charAt(i);
+        }
+        System.out.println("Reversed String of "+str+" is "+reversed);
+    }
+}
