@@ -1,0 +1,32 @@
+//Array: Count Even/Odd & Positive/Negative → Handle zeros, negatives, empty array
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter n number of elements:");
+        int n = sc.nextInt();
+        System.out.println("Enter "+n+" elements:");
+        int arr[]= new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int count1 =0;
+        int count2 =0;
+        int count3 =0;
+        int count4 =0;
+        int count5 =0;
+        if(n == 0){
+                System.out.println("Array is Empty.");
+            }
+        for(int i=0;i<n;i++){
+            if(arr[i] == 0) count1++; //zero's
+                else{
+                    if(arr[i] % 2 ==0) count2++; //even
+                        else count3++; //odd
+                    if(arr[i]>0) count4++; //positive
+                        else count5++; //negative
+                }
+        }
+        System.out.println("In Our Given Array: ---> zero: "+count1+" Even numbers: "+count2+" Odd numbers: "+count3+" Positives: "+count4+" Negatives: "+count5);
+    }
+}
