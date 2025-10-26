@@ -25,3 +25,25 @@ class Main {
 
 //Approach: 2
 
+import java.util.Scanner;
+
+public class NumberPalindrome {
+    public static boolean isPalindrome(int num) {
+        if (num < 0) return false;          // negative numbers not palindrome here
+        int original = num;
+        long reversed = 0;                // use long to avoid overflow for large ints
+        while (num != 0) {
+            int digit = num % 10;
+            reversed = reversed * 10 + digit;
+            num /= 10;
+        }
+        return reversed == original;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        System.out.println(isPalindrome(num));
+        sc.close();
+    }
+}
