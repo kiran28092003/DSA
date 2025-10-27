@@ -1,3 +1,4 @@
+//Approach: 1
 import java.util.Scanner;
 
 public class ArmstrongNumber {
@@ -24,3 +25,41 @@ public class ArmstrongNumber {
     }
 }
 
+//Approach: 2
+
+import java.util.Scanner;
+
+public class GeneralArmstrongNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        int original = num;
+        int count = 0;
+        int temp = num;
+
+        // Count digits
+        while(temp > 0) {
+            temp = temp / 10;
+            count++;
+        }
+
+        int sum = 0;
+        temp = num;
+
+        // Calculate sum of each digit raised to the power of count
+        while(temp > 0) {
+            int digit = temp % 10;
+            sum = sum + (int)Math.pow(digit, count);
+            temp = temp / 10;
+        }
+
+        if(sum == original) {
+            System.out.println(original + " is an Armstrong Number");
+        } else {
+            System.out.println(original + " is Not an Armstrong Number");
+        }
+    }
+}
