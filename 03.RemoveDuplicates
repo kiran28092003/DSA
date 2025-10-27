@@ -1,22 +1,18 @@
-import java.util.Scanner;
-
-public class RemoveDuplicates {
-    public static String removeDuplicates(String s) {
-        boolean[] seen = new boolean[256]; // or 128 for basic ASCII
-        StringBuilder sb = new StringBuilder();
-        for (char c : s.toCharArray()) {
-            if (!seen[c]) {
-                sb.append(c);
-                seen[c] = true;
-            }
-        }
-        return sb.toString();
-    }
-
+import java.util.Set;
+import java.util.LinkedHashSet;
+class Demo {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
-        System.out.println(removeDuplicates(s));
-        sc.close();
+        String str = "coconut";
+        //we are using LinkedHashSet because it do not store duplicates.
+        Set<Character> set = new LinkedHashSet<Character>();
+        for(int i=0;i<str.length();i++){
+            set.add(str.charAt(i)); // c o n u t
+        }
+        //we are not using String because String don't have append property.
+        StringBuffer sb = new StringBuffer();
+        for(Character c : set){
+            sb.append(c); //conut
+        }
+        System.out.println("String text after removing the duplicate characters is: "+sb);
     }
 }
