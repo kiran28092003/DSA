@@ -1,3 +1,4 @@
+//Approach: 1
 import java.util.Set;
 import java.util.LinkedHashSet;
 class Demo {
@@ -14,5 +15,30 @@ class Demo {
             sb.append(c); //conut
         }
         System.out.println("String text after removing the duplicate characters is: "+sb);
+    }
+}
+
+//Approach: 2
+
+import java.util.Scanner;
+import java.util.Set;
+import java.util.LinkedHashSet;
+class Demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter String:");
+        String str = sc.nextLine();  //coconut
+        //we are using LinkedHashSet because it do not store duplicates.
+        Set<Character> set = new LinkedHashSet<Character>();
+        for(int i=0;i<str.length();i++){
+            set.add(str.charAt(i)); // c o n u t
+        }
+        //we are not using String because String don't have append property.
+        //here we can use either StringBuffer or StringBuilder. but StringBuilder is safe and faster for single thread.
+        StringBuilder sb = new StringBuilder();
+        for(Character c : set){
+            sb.append(c); //conut
+        }
+        System.out.println("String text after removing the duplicate characters is:\n "+sb);
     }
 }
