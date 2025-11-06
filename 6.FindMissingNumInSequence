@@ -1,0 +1,19 @@
+method 1 : by sum
+
+public class MissingNumberSum {
+    public static int findMissingBySum(int[] arr) {
+        int n = arr.length + 1;            // original sequence 1..n
+        long expected = (long) n * (n + 1) / 2; // use long to avoid overflow
+        long actual = 0;
+        for (int v : arr) actual += v;
+        return (int) (expected - actual);
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 4, 5, 6}; // missing 3
+        System.out.println(findMissingBySum(arr)); // 3
+    }
+}
+
+
+method 2: by
