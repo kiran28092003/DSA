@@ -1,3 +1,9 @@
+Example: arr = [1,2,3,4,5], k = 2
+Reverse whole → [5,4,3,2,1]
+Reverse first k → [4,5,3,2,1]
+Reverse rest → [4,5,1,2,3] (desired)
+
+
 public class RotateArray {
     // Function to rotate the array by k positions
     public static void rotate(int[] arr, int k) {
