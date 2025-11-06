@@ -16,4 +16,23 @@ public class MissingNumberSum {
 }
 
 
-method 2: by
+method 2: by XOR
+
+public class MissingNumberXOR {
+    public static int findMissingByXOR(int[] arr) {
+        int n = arr.length + 1;
+        int xorAll = 0;
+        for (int i = 1; i <= n; i++) xorAll ^= i;
+
+        int xorArr = 0;
+        for (int v : arr) xorArr ^= v;
+
+        return xorAll ^ xorArr;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 4, 5, 6}; // missing 3
+        System.out.println(findMissingByXOR(arr)); // 3
+    }
+}
+
