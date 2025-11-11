@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class RearrangeName {
+    public static void main(String[] args) {
+        // Create a Scanner object to read text input from the console (System.in)
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user
+        System.out.println("Enter your full name (e.g. Kiran Ambadas Tajanpure):");
+
+        // Read the entire input line including spaces, then trim leading/trailing whitespace
+        String fullName = scanner.nextLine().trim();
+
+        // Close the scanner since we no longer need input
+        scanner.close();
+
+        // Handle the edge cases: empty input
+        if (fullName.isEmpty()) {
+            System.out.println("No name entered.");
+            return;
+        }
+
+        // Split the name into words using one-or-more-whitespace regex.
+        // This handles extra spaces between words gracefully.
+        String[] parts = fullName.split("\\s+");
+
+        // If there is only one word, nothing to rearrange
+        if (parts.length == 1) {
+            System.out.println(parts[0]);
+            return;
+        }
+
+        // Build the output: last word first, then the rest in original order
+        StringBuilder output = new StringBuilder();
+
+        // Append last name (parts[parts.length - 1])
+        output.append(parts[parts.length - 1]);
+
+        // Append a space and then the other parts in original order
+        for (int i = 0; i < parts.length - 1; i++) {
+            output.append(' ');
+            output.append(parts[i]);
+        }
+
+        // Print the final rearranged name
+        System.out.println(output.toString());
+    }
+}
