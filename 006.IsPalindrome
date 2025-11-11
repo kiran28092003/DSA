@@ -47,3 +47,33 @@ public class NumberPalindrome {
         sc.close();
     }
 }
+
+
+Approach 3: String 
+
+import java.util.Scanner;
+class Palindrome {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the String: ");
+        String str = sc.nextLine();
+        char arr[] = str.toCharArray();
+        int a = 0;
+        int l = arr.length-1;
+        Boolean flag = true;
+        while(a<l){
+            if(arr[a]==arr[l]){
+                a++;
+                l--;
+            }
+            else{
+                System.out.print("String is not Palindrom");
+                flag = false;
+                break;
+            }
+        }
+        if(flag == true){
+            System.out.println("String is palindrome");
+        }
+    }
+}
