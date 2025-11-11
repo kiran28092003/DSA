@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class ReverseFirstLast {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a name: ");
+        String name = sc.nextLine().trim(); // Take input and remove extra spaces
+
+        sc.close();
+
+        // Handle edge cases
+        if (name.length() <= 1) {
+            System.out.println("Output: " + name);
+            return;
+        }
+
+        // Convert string to character array
+        char[] ch = name.toCharArray();
+
+        // Swap first and last characters
+        char temp = ch[0];
+        ch[0] = ch[ch.length - 1];
+        ch[ch.length - 1] = temp;
+
+        // Convert char array back to String
+        String result = new String(ch);
+
+        System.out.println("Output: " + result);
+    }
+}
