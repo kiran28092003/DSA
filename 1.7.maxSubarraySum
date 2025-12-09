@@ -83,7 +83,7 @@ class Main {
 }
 
 
-//Method-III : Kadane's algorithm  TC=O(n)  handling all negative array elements as well.
+//Method-IV : Kadane's algorithm  TC=O(n) -> handling all negative array elements as well.
 
 
 class Main {
