@@ -1,3 +1,5 @@
+//method I
+
 import java.util.Scanner;
 
 public class SwapFirstLastWord {
@@ -37,5 +39,30 @@ public class SwapFirstLastWord {
 
         // Print final result
         System.out.println("Output: " + result.toString());
+    }
+}
+
+
+
+//Mathod II
+
+
+class Main {
+    public static void reverse312(String names[]){
+        int first = 0;
+        int last = names.length-1;
+       
+            String temp = names[last];
+            names[last] = names[first];
+            names[first] = temp;
+           
+        
+        for(int i=0;i<names.length;i++){
+            System.out.print(names[i]+" ");
+        }
+    }
+    public static void main(String[] args) {
+        String names[] = {"K","v","d"};
+        reverse312(names);
     }
 }
