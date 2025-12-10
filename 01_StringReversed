@@ -17,3 +17,26 @@ class Main{
         System.out.println("Reversed String of "+str+" is "+reversed);
     }
 }
+
+
+
+class Main {
+    public static void reverse(String names[]){
+        int first = 0;
+        int last = names.length-1;
+       while(first<last){
+            String temp = names[last];
+            names[last] = names[first];
+            names[first] = temp;
+           first++;
+           last--;
+       }
+        for(int i=0;i<names.length;i++){
+            System.out.print(names[i]+" ");
+        }
+    }
+    public static void main(String[] args) {
+        String names[] = {"k","v","d"};
+        reverse(names);
+    }
+}
